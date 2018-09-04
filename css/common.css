@@ -39,6 +39,8 @@ body {
 	width: 95%;
 }
 #wave canvas {
+	position: relative;
+	top:0;
 	z-index: -2;
 }
 /* header
