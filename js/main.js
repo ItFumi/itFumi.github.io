@@ -4,14 +4,14 @@
 		var menu_num = $("nav ul li a").index(this),
         	menu_position = $(".toScroll").eq(menu_num).offset().top;
         if(menu_num == 0) {
-        	$('html,body').animate({ scrollTop: 0 },800);
+        	$("html,body").animate({ scrollTop: 0 },800);
         } else {
-        	$('html,body').animate({ scrollTop: menu_position },800);
+        	$("html,body").animate({ scrollTop: menu_position },800);
 		}
     });
 	// top scroll
 	$(".toTop a").click(function () {
-        $('html,body').animate({ scrollTop: 0 },800);
+        $("html,body").animate({ scrollTop: 0 },800);
     });
     // toScroll position
     var window_height = $(window).height(),

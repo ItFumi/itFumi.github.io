@@ -32,16 +32,14 @@ body {
 #wave {
 	border-left: 1px solid #00a3d9;
 	border-right: 1px solid #00a3d9;
-	height: 380px;
 	margin: 40px auto 0;
 	max-width: 960px;
+	overflow: hidden;
 	padding-top: 20px;
 	width: 95%;
 }
-#wave_canvas {
-	height: 300px;
-	max-width: 958px;
-	width: 100%;
+#wave canvas {
+	z-index: -2;
 }
 /* header
 ----------------------------------------- */

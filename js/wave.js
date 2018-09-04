@@ -2,8 +2,8 @@
 var pixi = {
     'stage'         : '',
     'renderer'      : '',
-    'width'         : $("#wave").width(),
-    'height'        : $("#wave").height()
+    'width'         : '1600',
+    'height'        : '300'
 };
  
 var wave = {
@@ -11,7 +11,7 @@ var wave = {
     g: '',
     tween: '',
     count : 0,
-    ropePoint : 20,
+    ropePoint : 40,
     delay : 0.1,
     strength : 10
 };
@@ -48,10 +48,9 @@ function init() {
     pixi.stage.addChild(wave.g);
     
     // click wave
-    var actionBtn = document.getElementById('wave');
-    actionBtn.onclick = function(){
+    $("#wave").click(function () {
         waveTween()
-    };
+    });
 
     // initialize wave
     waveTween();
