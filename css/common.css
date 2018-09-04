@@ -1,0 +1,292 @@
+@charset "UTF-8";
+
+/* all
+----------------------------------------- */
+* {
+	box-sizing: border-box;
+}
+body {
+	color: #fff;
+	font-family: Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3, 'メイリオ', Meiryo, sans-serif;
+	font-size: 13px;
+}
+.bg {
+	background: #00a3d9;
+	margin: 0 auto;
+	max-width: 960px;
+	padding: 20px 40px;
+	width: 95%;
+}
+.bg:after {
+	clear: both;
+    content: "";
+    display: block;
+}
+.text {
+	line-height: 2;
+	padding-left: 5px;
+	padding-top: 10px;
+}
+/* wave
+----------------------------------------- */
+#wave {
+	border-left: 1px solid #00a3d9;
+	border-right: 1px solid #00a3d9;
+	height: 380px;
+	margin: 40px auto 0;
+	max-width: 960px;
+	padding-top: 20px;
+	width: 95%;
+}
+#wave_canvas {
+	height: 300px;
+	max-width: 958px;
+	width: 100%;
+}
+/* header
+----------------------------------------- */
+header {
+	position: relative;
+}
+header h1 {
+	float: left;
+	width: 45%;
+}
+header h1 img {
+	width: 100%;
+}
+nav {
+	bottom: 20px;
+	float: right;
+	position: absolute;
+	right: 40px;
+	width: calc(45% - 40px);
+}
+nav h2 img {
+	width: 100%;
+}
+nav ul {
+	font-size: 0;
+	width: 100%;
+}
+nav ul li {
+	cursor: pointer;
+	margin: 10px 5px 0 5px;
+	height: auto;
+	position: relative;
+	width: calc(25% - 10px);
+}
+nav ul li:before {
+	content: "";
+	display: block;
+	padding-top: 100%;
+}
+nav ul li a {
+	display: block;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+nav ul li a img {
+	height: 100%;
+	width: 100%;
+}
+/* main
+----------------------------------------- */
+#main {
+	padding-bottom: 20px;
+	position: relative;
+}
+.left_contents {
+	float: left;
+	width: 45%;
+}
+.right_contents {
+	float: right;
+	width: 45%;
+}
+.left_contents :not(h1) img  {
+	width: 100%;
+}
+.right_contents :not(h1) img {
+	width: 100%;
+}
+/* intro
+----------------------------------------- */
+#intro {
+	border-bottom: 2px solid #2BADD9;
+	padding-bottom: 30px;
+	padding-top: 40px;
+}
+/* about and skill
+----------------------------------------- */
+#about_and_skill {
+	border-bottom: 2px solid #2BADD9;
+}
+/* about */
+#myface {
+	margin-top: 20px;
+}
+#myname {
+	font-size: 17px;
+	margin-top: 25px;
+}
+#myname span {
+	display: block;
+	font-size: 10px;
+}
+#myface img {
+	width: 70%;
+}
+.social {
+	margin-top: 10px;
+}
+.social li {
+	display: inline-block;
+}
+/* skill */
+#skill_list {
+	margin-top: 20px;
+}
+.skill_box {
+	margin-bottom: 25px;
+	position: relative;
+}
+.skill_bar {
+    background: #0092c2;
+    height: 2px;
+}
+.skill_bar_num {
+	color: #fff;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.skill_bar_w {
+	-webkit-animation: expandWidth 2s cubic-bezier(0.45, 0.32, 0.72, 0.87);
+    animation: expandWidth 2s cubic-bezier(0.45, 0.32, 0.72, 0.87);
+	background: #fff;
+    float: left;
+    height: 100%;
+    width: 0%;
+}
+/* works
+----------------------------------------- */
+#works {
+	border-bottom: 2px solid #2BADD9;
+}
+#works .left_contents h2 {
+	margin-top: 20px;
+}
+#works_technology {
+	margin-bottom: 30px;
+}
+#works_image {
+	margin-top: 85px;
+	position: relative;
+	text-align: center;
+}
+/* toTop
+----------------------------------------- */
+.toTop a {
+	color: #fff;
+	cursor: pointer;
+	display: block;
+	font-size: 17px;
+	margin: auto;
+	text-decoration: none;
+	width: 17px;
+}
+/* footer
+----------------------------------------- */
+footer {
+	color: #000;
+	font-size: 12px;
+	text-align: center;
+}
+footer p {
+	margin-bottom: 30px;
+}
+
+/* responsive tablet
+----------------------------------------- */
+@media (max-width: 1020px) and (min-width: 768px) {
+
+/* all */
+body {
+	font-size: 1.274vw;
+}
+/* about and skill */
+#myname {
+	font-size: 1.666vw;
+}
+#myname span {
+	font-size: 0.98vw;
+}
+/* toTop */
+.toTop a {
+	font-size: 1.666vw;
+}
+/* footer */
+footer {
+	font-size: 1.176vw;
+}
+
+}
+/* responsive smart-phone
+----------------------------------------- */
+@media screen and (max-width: 767px) {
+
+/* all */
+body {
+	font-size: 3.129vw;
+}
+.bg {
+	padding: 20px 20px;
+}
+/* header */
+header h1 {
+	width: 100%;
+}
+nav {
+	margin-top: 40px;
+	position: static;
+	width: 100%;
+}
+nav ul {
+	margin: 0 auto;
+	width: 100%;
+}
+/* main */
+.left_contents {
+	width: 100%;
+}
+.right_contents {
+	width: 100%;
+}
+/* intro */
+#introVisual {
+	display: none;
+}
+/* about and skill */
+#myname {
+	font-size: 3.65vw;
+}
+#myname span {
+	font-size: 2.737vw;
+}
+/* works */
+#works_image {
+	margin-top: 0;
+}
+/* toTop */
+.toTop a {
+	font-size: 3.65vw;
+}
+/* footer */
+footer {
+	font-size: 2.998vw;
+}
+
+}
