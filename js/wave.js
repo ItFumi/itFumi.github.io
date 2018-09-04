@@ -2,8 +2,8 @@
 var pixi = {
     'stage'         : '',
     'renderer'      : '',
-    'width'         : '1600',
-    'height'        : '300'
+    'width'         : $("#wave").width(),
+    'height'        : $("#wave").height()
 };
  
 var wave = {
@@ -11,10 +11,14 @@ var wave = {
     g: '',
     tween: '',
     count : 0,
-    ropePoint : 40,
-    delay : 0.1,
-    strength : 10
+    ropePoint : 20,
+    delay : 0.1
 };
+if (pixi.width <= 767) {
+    wave.strength = 2;
+} else {
+    wave.strength = 10;
+}
 wave.ropeLength = pixi.width / wave.ropePoint;
  
 init();
@@ -62,7 +66,7 @@ function init() {
 function waveTween() {
     if( wave.tween === undefined) { wave.tween.stop(); }
     wave.tween = new TWEEN.Tween( wave )
-        .to( { strength: 13, delay: 0.2 }, 3000 )
+        .to( { strength: wave.strength + 3, delay: 0.2 }, 3000 )
         .easing( TWEEN.Easing.Quartic.Out )
         .onComplete( function(){
             wave.tween = new TWEEN.Tween( wave )
