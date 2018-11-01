@@ -53,7 +53,7 @@ function init() {
     
     // click wave
     $("#wave").click(function () {
-        waveTween()
+        waveTween();
     });
 
     // initialize wave

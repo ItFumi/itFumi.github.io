@@ -175,16 +175,33 @@ nav ul li a img {
 #works {
 	border-bottom: 2px solid #2BADD9;
 }
-#works .left_contents h2 {
+.work_contents {
+	margin-bottom: 40px;
+}
+.work_contents:after {
+	clear: both;
+	content: "";
+  display: block;
+}
+.work_contents .left_contents h2 {
 	margin-top: 20px;
 }
-#works_technology {
+.work_name a {
+	color: #fff;
+}
+.work_name a:hover {
+	text-decoration: none;
+}
+.work_technology {
 	margin-bottom: 30px;
 }
-#works_image {
-	margin-top: 85px;
+.work_image {
+	margin-top: 20px;
 	position: relative;
 	text-align: center;
+}
+.work_image img {
+	width: 400px;
 }
 /* toTop
 ----------------------------------------- */
@@ -280,7 +297,7 @@ nav ul {
 	font-size: 2.737vw;
 }
 /* works */
-#works_image {
+.work_image {
 	margin-top: 0;
 }
 /* toTop */
