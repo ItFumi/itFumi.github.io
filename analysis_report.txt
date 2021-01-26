@@ -1,0 +1,63 @@
+・main.js
+　// header nav scroll
+　var menu_num = $("nav ul li a").index(this);
+　menu_position = $(".toScroll").eq(menu_num).offset().top;
+
+　エレメントのインデックス番号を変数｢menu_num｣に返す。
+　変数｢menu_num｣に格納されたインデックス番号のクラス属性｢.toScroll｣のtopの値を取得する。
+
+
+　// skill bar move position
+　var window_height = $(window).height(),
+　skill_position = $("#skill_list").offset().top,
+　trigger_position = skill_position-window_height;
+　// scroll event
+　$(window).scroll(function () {
+　　// live scroll
+　　var scrollTop = $(window).scrollTop();
+　　// skill
+　　if(scrollTop > trigger_position) {
+　　　skill_bar();
+　　}
+　});
+
+　スキルバーを動的に動かす為のトリガー位置を取得し、
+　トリガー位置がスクロール位置を超えたら(その分スクロールしたら)関数｢skill_bar()｣を実行する。
+　トリガー位置はスキルのtop値からウィンドウの位置を引いた値となる。
+
+
+　// skill bar
+　var toExecutableOnce = function(f){
+　　var called = false;
+　　return function(){
+　　　if(!called){
+　　　　f.apply();
+　　　　called = true;
+　　　}
+　　};
+　};
+
+　上記処理の｢$(window).scroll...｣から、
+　スクロールの度に関数｢skill_bar()｣が実行されるのを防ぐ為に実行する。
+　初回実行時のみ、変数｢called｣の値が｢false｣の為、applyメソッドが実行される。
+
+
+　var skill_bar = toExecutableOnce(function () {
+　　$(".skill_bar_w").each(function () {
+　　　var self = this,
+　　　percentage = $(this).data("percentage"),
+　　　parent = $(this).parents(".skill_box");
+　　　$({ Counter: 0 }).animate({ Counter: percentage }, {
+　　　　duration: 5000,
+　　　　easing: "swing",
+　　　　step: function (now) {
+　　　　　var num = Math.floor(now);
+　　　　　$(self).css("width", num + "%");
+　　　　　parent.find(".skill_bar_num").text(num);
+　　　　}
+　　　});
+　　});
+　});
+
+　スキルの種類分、0%から各スキルのdata-percentage属性に設定された%値に横幅を伸ばす。
+　伸ばす動作をアニメーションさせたい為、step関数を使用する。
