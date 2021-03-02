@@ -1,2 +1,2 @@
-・Site URL
+**Site URL**
 https://itfumi.github.io/
