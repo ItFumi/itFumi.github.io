@@ -11,4 +11,4 @@ https://itfumi.github.io/
 - HTML5
 - CSS3
 - JavaScript
-- jQuery 
+  - jQuery
